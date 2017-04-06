@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<husacct version="5.3">
+<husacct version="3.4.1">
   <husacct.control.ControlServiceImpl>
-    <workspace name="Game31Workspace" language="en" />
+    <workspace name="Game31" language="en" />
   </husacct.control.ControlServiceImpl>
   <husacct.define.DefineServiceImpl>
     <Application>
-      <name>Game31Workspace</name>
+      <name>Game31</name>
       <version>1.0</version>
       <projects>
         <Project>
-          <name>Game31Workspace</name>
+          <name>Game31</name>
           <paths>
-            <path>src\main</path>
+            <path>src/main</path>
           </paths>
           <programmingLanguage>Java</programmingLanguage>
           <version>1.0</version>
@@ -25,42 +25,219 @@
           <ModuleStrategy>
             <type>Layer</type>
             <description />
-            <id>1</id>
-            <name>GUI</name>
-            <HierarchicalLevel>1</HierarchicalLevel>
+            <id>31</id>
+            <name>User Interface</name>
+            <HierarchicalLevel>13</HierarchicalLevel>
             <SoftwareUnitDefinitions>
               <SoftwareUnitDefinition>
-                <name>main.java.game31.userinterface</name>
+                <name>game31.userinterface</name>
                 <type>PACKAGE</type>
               </SoftwareUnitDefinition>
             </SoftwareUnitDefinitions>
             <PhysicalPaths>
-              <path>main.java.game31.userinterface</path>
+              <path>game31.userinterface</path>
             </PhysicalPaths>
+            <SubModules>
+              <ModuleStrategy>
+                <type>SubSystem</type>
+                <description />
+                <id>32</id>
+                <name>GameControl UI</name>
+                <SoftwareUnitDefinitions>
+                  <SoftwareUnitDefinition>
+                    <name>game31.userinterface.MainFrame</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.userinterface.SetupFrame</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.userinterface.TheMainPanel</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.userinterface.ScoreOverzichtFrame</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                </SoftwareUnitDefinitions>
+                <PhysicalPaths>
+                  <path>game31.userinterface.MainFrame</path>
+                  <path>game31.userinterface.SetupFrame</path>
+                  <path>game31.userinterface.TheMainPanel</path>
+                  <path>game31.userinterface.ScoreOverzichtFrame</path>
+                </PhysicalPaths>
+              </ModuleStrategy>
+              <ModuleStrategy>
+                <type>SubSystem</type>
+                <description />
+                <id>34</id>
+                <name>Players UI</name>
+                <SoftwareUnitDefinitions>
+                  <SoftwareUnitDefinition>
+                    <name>game31.userinterface.setupSpelers</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                </SoftwareUnitDefinitions>
+                <PhysicalPaths>
+                  <path>game31.userinterface.setupSpelers</path>
+                </PhysicalPaths>
+              </ModuleStrategy>
+            </SubModules>
           </ModuleStrategy>
           <ModuleStrategy>
             <type>Layer</type>
             <description />
-            <id>2</id>
+            <id>36</id>
             <name>Domain</name>
-            <HierarchicalLevel>2</HierarchicalLevel>
+            <HierarchicalLevel>14</HierarchicalLevel>
             <SoftwareUnitDefinitions>
               <SoftwareUnitDefinition>
-                <name>main.java.game31.domein</name>
+                <name>game31.domein</name>
                 <type>PACKAGE</type>
               </SoftwareUnitDefinition>
             </SoftwareUnitDefinitions>
             <PhysicalPaths>
-              <path>main.java.game31.domein</path>
+              <path>game31.domein</path>
             </PhysicalPaths>
+            <SubModules>
+              <ModuleStrategy>
+                <type>SubSystem</type>
+                <description />
+                <id>37</id>
+                <name>CardDeck</name>
+                <SoftwareUnitDefinitions>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.Kaart</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.KaartSpel</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.KaartStapel</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                </SoftwareUnitDefinitions>
+                <PhysicalPaths>
+                  <path>game31.domein.Kaart</path>
+                  <path>game31.domein.KaartSpel</path>
+                  <path>game31.domein.KaartStapel</path>
+                </PhysicalPaths>
+              </ModuleStrategy>
+              <ModuleStrategy>
+                <type>SubSystem</type>
+                <description />
+                <id>39</id>
+                <name>GameControl</name>
+                <SoftwareUnitDefinitions>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.Spel</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.SpelRonde</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.Deelname</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.Tafel</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.Hand</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                </SoftwareUnitDefinitions>
+                <PhysicalPaths>
+                  <path>game31.domein.Spel</path>
+                  <path>game31.domein.SpelRonde</path>
+                  <path>game31.domein.Deelname</path>
+                  <path>game31.domein.Tafel</path>
+                  <path>game31.domein.Hand</path>
+                </PhysicalPaths>
+              </ModuleStrategy>
+              <ModuleStrategy>
+                <type>SubSystem</type>
+                <description />
+                <id>41</id>
+                <name>Players</name>
+                <SoftwareUnitDefinitions>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.ComputerSpeler</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.HumanSpeler</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.Pot</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                  <SoftwareUnitDefinition>
+                    <name>game31.domein.Speler</name>
+                    <type>CLASS</type>
+                  </SoftwareUnitDefinition>
+                </SoftwareUnitDefinitions>
+                <PhysicalPaths>
+                  <path>game31.domein.ComputerSpeler</path>
+                  <path>game31.domein.HumanSpeler</path>
+                  <path>game31.domein.Pot</path>
+                  <path>game31.domein.Speler</path>
+                </PhysicalPaths>
+              </ModuleStrategy>
+            </SubModules>
+          </ModuleStrategy>
+          <ModuleStrategy>
+            <type>ExternalLibrary</type>
+            <description />
+            <id>42</id>
+            <name>External Systems</name>
+            <SubModules>
+              <ModuleStrategy>
+                <type>ExternalLibrary</type>
+                <description />
+                <id>44</id>
+                <name>Java</name>
+                <SoftwareUnitDefinitions>
+                  <SoftwareUnitDefinition>
+                    <name>xLibraries.java</name>
+                    <type>LIBRARY</type>
+                  </SoftwareUnitDefinition>
+                </SoftwareUnitDefinitions>
+                <PhysicalPaths>
+                  <path>xLibraries.java</path>
+                </PhysicalPaths>
+              </ModuleStrategy>
+              <ModuleStrategy>
+                <type>ExternalLibrary</type>
+                <description />
+                <id>46</id>
+                <name>Swing</name>
+                <SoftwareUnitDefinitions>
+                  <SoftwareUnitDefinition>
+                    <name>xLibraries.javax.swing</name>
+                    <type>LIBRARY</type>
+                  </SoftwareUnitDefinition>
+                </SoftwareUnitDefinitions>
+                <PhysicalPaths>
+                  <path>xLibraries.javax.swing</path>
+                </PhysicalPaths>
+              </ModuleStrategy>
+            </SubModules>
           </ModuleStrategy>
         </modules>
         <rules>
           <AppliedRule>
-            <id>1</id>
+            <id>66</id>
             <type>IsNotAllowedToMakeBackCall</type>
-            <moduleFrom>1</moduleFrom>
-            <moduleTo>1</moduleTo>
+            <moduleFrom>31</moduleFrom>
+            <moduleTo>31</moduleTo>
             <enabled>true</enabled>
             <description>This is a default rule for this type of module.
 IsNotAllowedToMakeBackCallDescription</description>
@@ -69,10 +246,10 @@ IsNotAllowedToMakeBackCallDescription</description>
             <isException>false</isException>
           </AppliedRule>
           <AppliedRule>
-            <id>3</id>
+            <id>68</id>
             <type>IsNotAllowedToMakeSkipCall</type>
-            <moduleFrom>1</moduleFrom>
-            <moduleTo>1</moduleTo>
+            <moduleFrom>31</moduleFrom>
+            <moduleTo>31</moduleTo>
             <enabled>true</enabled>
             <description>This is a default rule for this type of module.
 IsNotAllowedToMakeSkipCallDescription</description>
@@ -81,10 +258,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
             <isException>false</isException>
           </AppliedRule>
           <AppliedRule>
-            <id>5</id>
+            <id>70</id>
             <type>IsNotAllowedToMakeBackCall</type>
-            <moduleFrom>2</moduleFrom>
-            <moduleTo>2</moduleTo>
+            <moduleFrom>36</moduleFrom>
+            <moduleTo>36</moduleTo>
             <enabled>true</enabled>
             <description>This is a default rule for this type of module.
 IsNotAllowedToMakeBackCallDescription</description>
@@ -93,150 +270,218 @@ IsNotAllowedToMakeBackCallDescription</description>
             <isException>false</isException>
           </AppliedRule>
           <AppliedRule>
-            <id>7</id>
+            <id>72</id>
             <type>IsNotAllowedToMakeSkipCall</type>
-            <moduleFrom>2</moduleFrom>
-            <moduleTo>2</moduleTo>
+            <moduleFrom>36</moduleFrom>
+            <moduleTo>36</moduleTo>
             <enabled>true</enabled>
             <description>This is a default rule for this type of module.
 IsNotAllowedToMakeSkipCallDescription</description>
             <regex />
             <dependencies />
             <isException>false</isException>
+          </AppliedRule>
+          <AppliedRule>
+            <id>76</id>
+            <type>IsOnlyAllowedToUse</type>
+            <moduleFrom>34</moduleFrom>
+            <moduleTo>41</moduleTo>
+            <enabled>true</enabled>
+            <description />
+            <regex />
+            <dependencies />
+            <isException>false</isException>
+          </AppliedRule>
+          <AppliedRule>
+            <id>82</id>
+            <type>IsNotAllowedToUse</type>
+            <moduleFrom>37</moduleFrom>
+            <moduleTo>41</moduleTo>
+            <enabled>true</enabled>
+            <description />
+            <regex />
+            <dependencies />
+            <isException>false</isException>
+          </AppliedRule>
+          <AppliedRule>
+            <id>87</id>
+            <type>IsTheOnlyModuleAllowedToUse</type>
+            <moduleFrom>31</moduleFrom>
+            <moduleTo>46</moduleTo>
+            <enabled>true</enabled>
+            <description />
+            <regex />
+            <dependencies />
+            <isException>false</isException>
+          </AppliedRule>
+          <AppliedRule>
+            <id>88</id>
+            <type>IsNotAllowedToUse</type>
+            <moduleFrom>41</moduleFrom>
+            <moduleTo>37</moduleTo>
+            <enabled>true</enabled>
+            <description />
+            <regex />
+            <dependencies />
+            <isException>false</isException>
+          </AppliedRule>
+          <AppliedRule>
+            <id>90</id>
+            <type>IsTheOnlyModuleAllowedToUse</type>
+            <moduleFrom>32</moduleFrom>
+            <moduleTo>39</moduleTo>
+            <enabled>true</enabled>
+            <description />
+            <regex />
+            <dependencies />
+            <isException>false</isException>
+          </AppliedRule>
+          <AppliedRule>
+            <id>92</id>
+            <type>IsAllowedToUse</type>
+            <moduleFrom>34</moduleFrom>
+            <moduleTo>42</moduleTo>
+            <enabled>true</enabled>
+            <description />
+            <regex />
+            <dependencies>
+              <dependency>Import</dependency>
+              <dependency>Call</dependency>
+              <dependency>Annotation</dependency>
+              <dependency>Inheritance</dependency>
+              <dependency>Declaration</dependency>
+              <dependency>Access</dependency>
+            </dependencies>
+            <isException>true</isException>
+            <parentAppliedRuleId>76</parentAppliedRuleId>
           </AppliedRule>
         </rules>
       </Architecture>
     </Application>
   </husacct.define.DefineServiceImpl>
   <husacct.analyse.AnalyseServiceImpl>
-    <rootElementAnalyse />
+    <rootElement>
+      <EmptyAnalysedApplication />
+    </rootElement>
   </husacct.analyse.AnalyseServiceImpl>
   <husacct.validate.ValidateServiceImpl>
     <validate>
       <severities>
         <severity>
           <severityKey>Low</severityKey>
-          <id>a4798b61-4712-4b55-bff0-e7c1a74048bf</id>
+          <id>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</id>
           <color>-65536</color>
         </severity>
         <severity>
           <severityKey>Medium</severityKey>
-          <id>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</id>
+          <id>a93850f7-ec5e-4833-9210-58cbe603e57f</id>
           <color>-65536</color>
         </severity>
         <severity>
           <severityKey>High</severityKey>
-          <id>33fc9881-d091-4378-a8b0-5c72385d2739</id>
+          <id>0086fbde-6480-4c6a-849d-b77f367c48e7</id>
           <color>-65536</color>
         </severity>
       </severities>
       <severitiesPerTypesPerProgrammingLanguages>
         <severityPerTypePerProgrammingLanguage language="C#">
           <severityPerType>
-            <typeKey>Call</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>private</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>package</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
-          </severityPerType>
-          <severityPerType>
             <typeKey>Import</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Reference</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Inheritance</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Access</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Annotation</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>default</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>public</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>protected</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
           </severityPerType>
           <severityPerType>
-            <typeKey>Declaration</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
+            <typeKey>default</typeKey>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Call</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Annotation</typeKey>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>package</typeKey>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>class</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Inheritance</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Access</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Declaration</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>public</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>private</typeKey>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
           </severityPerType>
         </severityPerTypePerProgrammingLanguage>
         <severityPerTypePerProgrammingLanguage language="Java">
           <severityPerType>
-            <typeKey>Call</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>private</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>package</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
-          </severityPerType>
-          <severityPerType>
             <typeKey>Import</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Reference</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Inheritance</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Access</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Annotation</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>default</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>protected</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
           </severityPerType>
           <severityPerType>
-            <typeKey>public</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
+            <typeKey>Call</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
           </severityPerType>
           <severityPerType>
-            <typeKey>Declaration</typeKey>
-            <severityId>f04f2f77-61a1-46f7-8ae8-90e53ca7efc1</severityId>
+            <typeKey>Annotation</typeKey>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>package</typeKey>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>class</typeKey>
-            <severityId>a4798b61-4712-4b55-bff0-e7c1a74048bf</severityId>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Inheritance</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Access</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Declaration</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>public</typeKey>
+            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>private</typeKey>
+            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
           </severityPerType>
         </severityPerTypePerProgrammingLanguage>
       </severitiesPerTypesPerProgrammingLanguages>
@@ -338,10 +583,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsNotAllowedToMakeBackCall">
@@ -370,10 +611,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -400,10 +637,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -434,10 +667,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -464,10 +693,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -498,10 +723,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -528,10 +749,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -562,10 +779,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -592,10 +805,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -626,10 +835,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -658,10 +863,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="MustUse">
@@ -688,10 +889,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -794,10 +991,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsNotAllowedToMakeBackCall">
@@ -826,10 +1019,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -856,10 +1045,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -890,10 +1075,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -920,10 +1101,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -954,10 +1131,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -984,10 +1157,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -1018,10 +1187,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -1048,10 +1213,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -1082,10 +1243,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -1112,10 +1269,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
-                <enabled>true</enabled>
-              </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -1146,10 +1299,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
-              <violationType>
-                <violationKey>Reference</violationKey>
-                <enabled>true</enabled>
-              </violationType>
             </violationTypes>
           </ruleType>
         </activeViolationType>
@@ -1159,7 +1308,7 @@ IsNotAllowedToMakeSkipCallDescription</description>
   <husacct.graphics.GraphicsServiceImpl>
     <ArchitecureGraphicsService>
       <analysedController showDependencies="true" showViolations="false" smartLines="true" layoutStrategy="BASIC_LAYOUT" />
-      <definedController showDependencies="true" showViolations="false" smartLines="true" layoutStrategy="BASIC_LAYOUT" />
+      <definedController showDependencies="true" showViolations="true" smartLines="true" layoutStrategy="BASIC_LAYOUT" />
     </ArchitecureGraphicsService>
   </husacct.graphics.GraphicsServiceImpl>
 </husacct>
