@@ -1,23 +1,24 @@
 package test.java.sacc;
 
 import static org.junit.Assert.assertTrue;
-import husacct.ExternalServiceProvider;
-import husacct.common.dto.ViolationImExportDTO;
-import husacct.common.dto.ViolationReportDTO;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import externalinterface.ExternalServiceProvider;
+import externalinterface.SaccCommandDTO;
+import externalinterface.ViolationImExportDTO;
+import externalinterface.ViolationReportDTO;
 
 public class SoftwareArchitectureComplianceCheck {
 	public static final String EXPORT_FOLDER = "src/test/resources/sacc/export/";
@@ -28,23 +29,27 @@ public class SoftwareArchitectureComplianceCheck {
 	// Refers to a file containing a set of previous violations. Used to determine new violations.
 	private static final String importFilePathAllPreviousViolations =
 			SACC_FOLDER + "ArchitectureViolations_Game31_All_ImportFile.xml"; 
-	// Indicates if an XML document with all current violations should be created.
-	private static final boolean exportAllViolations = true;
-	// Indicates if an XML document with only the new current violations should be created.
-	private static final boolean exportNewViolations = false;
 
+	private static SaccCommandDTO saccCommandDTO;
 	private static ViolationReportDTO violationReport = null;
 
 
 	@BeforeClass
 	public static void beforeClass() {
 		try {
-			setLog4jConfiguration();
 			System.out.println(" Start SACC with HUSACCT on workspace: " + workspacePath);
-			ExternalServiceProvider externalServiceProvider = ExternalServiceProvider.getInstance();
-			violationReport = externalServiceProvider.performSoftwareArchitectureComplianceCheck(workspacePath, 
-					importFilePathAllPreviousViolations, exportAllViolations, exportNewViolations);
 
+			saccCommandDTO = new SaccCommandDTO();
+			saccCommandDTO.setHusacctWorkspaceFile(workspacePath);
+			ArrayList<String> paths = new ArrayList<>();
+			paths.add("src/main");
+			saccCommandDTO.setSourceCodePaths(paths);
+			saccCommandDTO.setImportFilePreviousViolations(importFilePathAllPreviousViolations);
+			saccCommandDTO.setExportAllViolations(true);
+			saccCommandDTO.setExportNewViolations(false);
+			
+			ExternalServiceProvider externalServiceProvider = ExternalServiceProvider.getInstance();
+			violationReport = externalServiceProvider.performSoftwareArchitectureComplianceCheck(saccCommandDTO);
 		} catch (Exception e){
 			String errorMessage =  "Exception: " + e.getCause().toString();
 			System.out.println(errorMessage);
@@ -53,7 +58,7 @@ public class SoftwareArchitectureComplianceCheck {
 
 	@AfterClass
 	public static void tearDown(){
-		System.out.println(" Finished: SACC on HUSACCT's source code");
+		System.out.println(" Finished SACC with HUSACCT");
 	}
 	
 	@Test
@@ -109,7 +114,7 @@ public class SoftwareArchitectureComplianceCheck {
 			if (violationReport.getNrOfNewViolations() > 0) {
 				System.out.println(" New architectural violations detected! Number of new violations = " + violationReport.getNrOfNewViolations());
 				for (ViolationImExportDTO newViolation : violationReport.getNewViolations()) {
-					System.out.println(" Violation in class: " + newViolation.getFrom() + " Line: " + newViolation.getLine() + " Message: " + newViolation.getMessage());
+					//System.out.println(" Violation in class: " + newViolation.getFrom() + " Line: " + newViolation.getLine() + " Message: " + newViolation.getMessage());
 				}
 			} else {
 				System.out.println(" No new architectural violations detected!");
@@ -117,11 +122,6 @@ public class SoftwareArchitectureComplianceCheck {
 		}
 	}
 	
-	
-	private static void setLog4jConfiguration() {
-		URL propertiesFile = Class.class.getResource("/husacct/common/resources/log4j.properties");
-		PropertyConfigurator.configure(propertiesFile);
-	}
 	
 	private static String getFormattedDate(Calendar calendar) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy kk:mm:ss");
