@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<husacct version="3.4.1">
+<husacct version="5.3">
   <husacct.control.ControlServiceImpl>
     <workspace name="Game31" language="en" />
   </husacct.control.ControlServiceImpl>
@@ -11,7 +11,7 @@
         <Project>
           <name>Game31</name>
           <paths>
-            <path>src/main</path>
+            <path>C:\Users\lpwer\Documents\GitHub\ArchitectureRefactoringAssignment\src\main</path>
           </paths>
           <programmingLanguage>Java</programmingLanguage>
           <version>1.0</version>
@@ -30,12 +30,12 @@
             <HierarchicalLevel>13</HierarchicalLevel>
             <SoftwareUnitDefinitions>
               <SoftwareUnitDefinition>
-                <name>game31.userinterface</name>
+                <name>main.java.game31.userinterface</name>
                 <type>PACKAGE</type>
               </SoftwareUnitDefinition>
             </SoftwareUnitDefinitions>
             <PhysicalPaths>
-              <path>game31.userinterface</path>
+              <path>main.java.game31.userinterface</path>
             </PhysicalPaths>
             <SubModules>
               <ModuleStrategy>
@@ -45,27 +45,27 @@
                 <name>GameControl UI</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>game31.userinterface.MainFrame</name>
+                    <name>main.java.game31.userinterface.MainFrame</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.userinterface.SetupFrame</name>
+                    <name>main.java.game31.userinterface.SetupFrame</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.userinterface.TheMainPanel</name>
+                    <name>main.java.game31.userinterface.TheMainPanel</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.userinterface.ScoreOverzichtFrame</name>
+                    <name>main.java.game31.userinterface.ScoreOverzichtFrame</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>game31.userinterface.MainFrame</path>
-                  <path>game31.userinterface.SetupFrame</path>
-                  <path>game31.userinterface.TheMainPanel</path>
-                  <path>game31.userinterface.ScoreOverzichtFrame</path>
+                  <path>main.java.game31.userinterface.MainFrame</path>
+                  <path>main.java.game31.userinterface.SetupFrame</path>
+                  <path>main.java.game31.userinterface.TheMainPanel</path>
+                  <path>main.java.game31.userinterface.ScoreOverzichtFrame</path>
                 </PhysicalPaths>
               </ModuleStrategy>
               <ModuleStrategy>
@@ -75,12 +75,12 @@
                 <name>Players UI</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>game31.userinterface.setupSpelers</name>
+                    <name>main.java.game31.userinterface.setupSpeler</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>game31.userinterface.setupSpelers</path>
+                  <path>main.java.game31.userinterface.setupSpeler</path>
                 </PhysicalPaths>
               </ModuleStrategy>
             </SubModules>
@@ -93,12 +93,12 @@
             <HierarchicalLevel>14</HierarchicalLevel>
             <SoftwareUnitDefinitions>
               <SoftwareUnitDefinition>
-                <name>game31.domein</name>
+                <name>main.java.game31.domein</name>
                 <type>PACKAGE</type>
               </SoftwareUnitDefinition>
             </SoftwareUnitDefinitions>
             <PhysicalPaths>
-              <path>game31.domein</path>
+              <path>main.java.game31.domein</path>
             </PhysicalPaths>
             <SubModules>
               <ModuleStrategy>
@@ -108,22 +108,22 @@
                 <name>CardDeck</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.Kaart</name>
+                    <name>main.java.game31.domein.Kaart</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.KaartSpel</name>
+                    <name>main.java.game31.domein.KaartSpel</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.KaartStapel</name>
+                    <name>main.java.game31.domein.KaartStapel</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>game31.domein.Kaart</path>
-                  <path>game31.domein.KaartSpel</path>
-                  <path>game31.domein.KaartStapel</path>
+                  <path>main.java.game31.domein.Kaart</path>
+                  <path>main.java.game31.domein.KaartSpel</path>
+                  <path>main.java.game31.domein.KaartStapel</path>
                 </PhysicalPaths>
               </ModuleStrategy>
               <ModuleStrategy>
@@ -133,32 +133,32 @@
                 <name>GameControl</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.Spel</name>
+                    <name>main.java.game31.domein.Spel</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.SpelRonde</name>
+                    <name>main.java.game31.domein.SpelRonde</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.Deelname</name>
+                    <name>main.java.game31.domein.Deelname</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.Tafel</name>
+                    <name>main.java.game31.domein.Hand</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.Hand</name>
+                    <name>main.java.game31.domein.Tafel</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>game31.domein.Spel</path>
-                  <path>game31.domein.SpelRonde</path>
-                  <path>game31.domein.Deelname</path>
-                  <path>game31.domein.Tafel</path>
-                  <path>game31.domein.Hand</path>
+                  <path>main.java.game31.domein.Spel</path>
+                  <path>main.java.game31.domein.SpelRonde</path>
+                  <path>main.java.game31.domein.Deelname</path>
+                  <path>main.java.game31.domein.Hand</path>
+                  <path>main.java.game31.domein.Tafel</path>
                 </PhysicalPaths>
               </ModuleStrategy>
               <ModuleStrategy>
@@ -168,27 +168,27 @@
                 <name>Players</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.ComputerSpeler</name>
+                    <name>main.java.game31.domein.ComputerSpeler</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.HumanSpeler</name>
+                    <name>main.java.game31.domein.HumanSpeler</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.Pot</name>
+                    <name>main.java.game31.domein.Pot</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                   <SoftwareUnitDefinition>
-                    <name>game31.domein.Speler</name>
+                    <name>main.java.game31.domein.Speler</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>game31.domein.ComputerSpeler</path>
-                  <path>game31.domein.HumanSpeler</path>
-                  <path>game31.domein.Pot</path>
-                  <path>game31.domein.Speler</path>
+                  <path>main.java.game31.domein.ComputerSpeler</path>
+                  <path>main.java.game31.domein.HumanSpeler</path>
+                  <path>main.java.game31.domein.Pot</path>
+                  <path>main.java.game31.domein.Speler</path>
                 </PhysicalPaths>
               </ModuleStrategy>
             </SubModules>
@@ -360,128 +360,134 @@ IsNotAllowedToMakeSkipCallDescription</description>
     </Application>
   </husacct.define.DefineServiceImpl>
   <husacct.analyse.AnalyseServiceImpl>
-    <rootElement>
-      <EmptyAnalysedApplication />
-    </rootElement>
+    <rootElementAnalyse />
   </husacct.analyse.AnalyseServiceImpl>
   <husacct.validate.ValidateServiceImpl>
     <validate>
       <severities>
         <severity>
           <severityKey>Low</severityKey>
-          <id>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</id>
+          <id>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</id>
           <color>-65536</color>
         </severity>
         <severity>
           <severityKey>Medium</severityKey>
-          <id>a93850f7-ec5e-4833-9210-58cbe603e57f</id>
+          <id>85af8a7e-6888-4541-8c57-ec4346cf67bb</id>
           <color>-65536</color>
         </severity>
         <severity>
           <severityKey>High</severityKey>
-          <id>0086fbde-6480-4c6a-849d-b77f367c48e7</id>
+          <id>72a6a454-59dc-4a3a-9691-f00a0f751739</id>
           <color>-65536</color>
         </severity>
       </severities>
       <severitiesPerTypesPerProgrammingLanguages>
         <severityPerTypePerProgrammingLanguage language="C#">
           <severityPerType>
-            <typeKey>Import</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>protected</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>default</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
             <typeKey>Call</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Annotation</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>package</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>class</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Inheritance</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Access</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Declaration</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>public</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>private</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>package</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Import</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Reference</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Inheritance</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Access</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Annotation</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>default</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>protected</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>public</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Declaration</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>class</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
           </severityPerType>
         </severityPerTypePerProgrammingLanguage>
         <severityPerTypePerProgrammingLanguage language="Java">
           <severityPerType>
-            <typeKey>Import</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>default</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>protected</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
             <typeKey>Call</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Annotation</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>package</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>class</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Inheritance</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Access</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>Declaration</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
-          </severityPerType>
-          <severityPerType>
-            <typeKey>public</typeKey>
-            <severityId>a93850f7-ec5e-4833-9210-58cbe603e57f</severityId>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>private</typeKey>
-            <severityId>11fed5c2-9a24-4cdc-9052-5dfd57f4012e</severityId>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>package</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Import</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Reference</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Inheritance</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Access</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Annotation</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>default</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>public</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>protected</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>Declaration</typeKey>
+            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+          </severityPerType>
+          <severityPerType>
+            <typeKey>class</typeKey>
+            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
           </severityPerType>
         </severityPerTypePerProgrammingLanguage>
       </severitiesPerTypesPerProgrammingLanguages>
@@ -583,6 +589,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsNotAllowedToMakeBackCall">
@@ -611,6 +621,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -637,6 +651,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -667,6 +685,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -693,6 +715,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -723,6 +749,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -749,6 +779,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -779,6 +813,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -805,6 +843,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -835,6 +877,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -863,6 +909,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="MustUse">
@@ -889,6 +939,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -991,6 +1045,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsNotAllowedToMakeBackCall">
@@ -1019,6 +1077,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -1045,6 +1107,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -1075,6 +1141,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -1101,6 +1171,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -1131,6 +1205,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -1157,6 +1235,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -1187,6 +1269,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -1213,6 +1299,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -1243,6 +1333,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
           <ruleType type="IsAllowedToUse">
@@ -1269,6 +1363,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
               </violationType>
               <violationType>
                 <violationKey>Annotation</violationKey>
+                <enabled>true</enabled>
+              </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
                 <enabled>true</enabled>
               </violationType>
             </violationTypes>
@@ -1299,6 +1397,10 @@ IsNotAllowedToMakeSkipCallDescription</description>
                 <violationKey>Annotation</violationKey>
                 <enabled>true</enabled>
               </violationType>
+              <violationType>
+                <violationKey>Reference</violationKey>
+                <enabled>true</enabled>
+              </violationType>
             </violationTypes>
           </ruleType>
         </activeViolationType>
@@ -1308,7 +1410,7 @@ IsNotAllowedToMakeSkipCallDescription</description>
   <husacct.graphics.GraphicsServiceImpl>
     <ArchitecureGraphicsService>
       <analysedController showDependencies="true" showViolations="false" smartLines="true" layoutStrategy="BASIC_LAYOUT" />
-      <definedController showDependencies="true" showViolations="true" smartLines="true" layoutStrategy="BASIC_LAYOUT" />
+      <definedController showDependencies="true" showViolations="false" smartLines="true" layoutStrategy="BASIC_LAYOUT" />
     </ArchitecureGraphicsService>
   </husacct.graphics.GraphicsServiceImpl>
 </husacct>

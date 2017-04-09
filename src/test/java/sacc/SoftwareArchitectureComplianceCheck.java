@@ -1,6 +1,10 @@
 package test.java.sacc;
 
 import static org.junit.Assert.assertTrue;
+import husacct.externalinterface.ExternalServiceProvider;
+import husacct.externalinterface.SaccCommandDTO;
+import husacct.externalinterface.ViolationImExportDTO;
+import husacct.externalinterface.ViolationReportDTO;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -8,6 +12,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.TreeSet;
 
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
@@ -15,10 +20,6 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import externalinterface.ExternalServiceProvider;
-import externalinterface.SaccCommandDTO;
-import externalinterface.ViolationImExportDTO;
-import externalinterface.ViolationReportDTO;
 
 public class SoftwareArchitectureComplianceCheck {
 	public static final String EXPORT_FOLDER = "src/test/resources/sacc/export/";
@@ -62,10 +63,23 @@ public class SoftwareArchitectureComplianceCheck {
 	}
 	
 	@Test
+	public void isSourceCodeAnalysedSuccessfully() {
+		boolean numberOfDependenciesNotZero = false;
+		assertTrue(violationReport != null);
+		if (violationReport != null) {
+			if (violationReport.getNrOfAllCurrentDependencies() > 0) {
+				numberOfDependenciesNotZero = true;
+			}
+		}
+		assertTrue(numberOfDependenciesNotZero);
+	}
+	
+	@Test
 	public void hasNumberOfViolationsIncreased() {
 		boolean numberOfViolationsHasNotIncreased = true;
 		assertTrue(violationReport != null);
 		if (violationReport != null) {
+			System.out.println(" SACC results:");
 			System.out.println(" Previous number of violations: " + violationReport.getNrOfAllPreviousViolations() 
 					+ "  At: " + getFormattedDate(violationReport.getTimePreviousCheck()));
 			System.out.println(" Current number of violations: " + violationReport.getNrOfAllCurrentViolations());
@@ -78,8 +92,33 @@ public class SoftwareArchitectureComplianceCheck {
 			}
 			*/
 		}
+		// Report on new architecture violations 
+		if (violationReport != null) {
+			if (violationReport.getNrOfNewViolations() > 0) {
+				System.out.println(" New architectural violations detected! Number of new violations = " + violationReport.getNrOfNewViolations());
+				TreeSet<String> messageAndFromClassSet = new TreeSet<>();
+				int numberOfPrintLines = 0;
+				ViolationImExportDTO[] newViolations = violationReport.getNewViolations();
+				for (ViolationImExportDTO newViolation : newViolations) {
+					String key = newViolation.getMessage() + newViolation.getFrom();
+					if (!messageAndFromClassSet.contains(key)) {
+						messageAndFromClassSet.add(key);
+						if (numberOfPrintLines <= 25) {
+							System.out.println(" Violated rule: " + newViolation.getMessage() + "; Violating class: " + newViolation.getFrom());
+							numberOfPrintLines ++;
+						} else {
+							System.out.println(" More violations detected; study ViolationReportDTO.newViolations");
+							break;
+						}
+					}
+				}
+			} else {
+				System.out.println(" No new architectural violations detected!");
+			}
+		}
 		assertTrue(numberOfViolationsHasNotIncreased);
 	}
+	
 	
 	@SuppressWarnings("unused")
 	private void replaceImportFileAllPreviousViolations() {
@@ -108,21 +147,6 @@ public class SoftwareArchitectureComplianceCheck {
 	}
 
 
-	@Test
-	public void areNewArchitecturalViolationsDetected() {
-		if (violationReport != null) {
-			if (violationReport.getNrOfNewViolations() > 0) {
-				System.out.println(" New architectural violations detected! Number of new violations = " + violationReport.getNrOfNewViolations());
-				for (ViolationImExportDTO newViolation : violationReport.getNewViolations()) {
-					//System.out.println(" Violation in class: " + newViolation.getFrom() + " Line: " + newViolation.getLine() + " Message: " + newViolation.getMessage());
-				}
-			} else {
-				System.out.println(" No new architectural violations detected!");
-			}
-		}
-	}
-	
-	
 	private static String getFormattedDate(Calendar calendar) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy kk:mm:ss");
 		return dateFormat.format(calendar.getTime());
