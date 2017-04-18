@@ -1,10 +1,12 @@
-package main.java.game31.domein;
+package main.java.game31.domain.gamecontrol;
 
 import java.util.*;
 
+import main.java.game31.domain.carddeck.Kaart;
+
 public class Tafel
 {
-	private Vector kaarten;
+	private Vector<Kaart> kaarten;
 	private Kaart selectedKaart;
 	private int place;
 
@@ -12,7 +14,7 @@ public class Tafel
 	{
 	}
 
-	public void setKaarten(Vector kaarten)
+	public void setKaarten(Vector<Kaart> kaarten)
 	{
 		this.kaarten = kaarten;
 	}
@@ -32,7 +34,7 @@ public class Tafel
 
 	public void replaceFor(Kaart k1, Kaart k2)
 	{
-		for (Iterator i = kaarten.iterator(); i.hasNext();) {
+		for (Iterator<Kaart> i = kaarten.iterator(); i.hasNext();) {
 			Kaart k = (Kaart) i.next();
 			if (k.equals(k1)) {
 				place = kaarten.indexOf(k);
@@ -43,11 +45,11 @@ public class Tafel
 		}
 	}
 
-	public Vector getKaarten()
+	public Vector<Kaart> getKaarten()
 	{
 		return kaarten;
 	}
-	public void replaceAll(Vector kaarten)
+	public void replaceAll(Vector<Kaart> kaarten)
 	{
 		this.kaarten = kaarten;
 	}

@@ -43,7 +43,7 @@ public class SoftwareArchitectureComplianceCheck {
 			saccCommandDTO = new SaccCommandDTO();
 			saccCommandDTO.setHusacctWorkspaceFile(workspacePath);
 			ArrayList<String> paths = new ArrayList<>();
-			paths.add("src/main");
+			paths.add("src/main/java");
 			saccCommandDTO.setSourceCodePaths(paths);
 			saccCommandDTO.setImportFilePreviousViolations(importFilePathAllPreviousViolations);
 			saccCommandDTO.setExportAllViolations(true);

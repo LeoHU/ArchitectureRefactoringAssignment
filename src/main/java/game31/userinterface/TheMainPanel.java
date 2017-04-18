@@ -16,12 +16,13 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import main.java.game31.domein.ComputerSpeler;
-import main.java.game31.domein.Deelname;
-import main.java.game31.domein.Kaart;
-import main.java.game31.domein.Spel;
-import main.java.game31.domein.SpelRonde;
-import main.java.game31.domein.Tafel;
+import main.java.game31.domain.carddeck.Kaart;
+import main.java.game31.domain.gamecontrol.Deelname;
+import main.java.game31.domain.gamecontrol.Spel;
+import main.java.game31.domain.gamecontrol.SpelRonde;
+import main.java.game31.domain.gamecontrol.Tafel;
+import main.java.game31.domain.players.PlayersService;
+import main.java.game31.domain.players.SpelerDTO;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -188,21 +189,21 @@ public class TheMainPanel extends javax.swing.JPanel {
 	private void buildSpelersTable() {
 		scrollPanels.removeAll();		
 		//Build tableHeader
-		Vector spelersTableHeader = new Vector();
+		Vector<String> spelersTableHeader = new Vector<>();
 		spelersTableHeader.addElement("Naam");
 		spelersTableHeader.addElement("Fices");
 		
 		//Build tablecontents
-		Vector spelersTableData = new Vector();
+		Vector<Vector<String>> spelersTableData = new Vector<>();
 		if (hetSpel != null) {
 			SpelRonde huidigeRonde = hetSpel.getHuidigeSpelRonde();
-			Vector deelnemers = huidigeRonde.geefDeelnames();
-			for(Enumeration e = deelnemers.elements(); e.hasMoreElements();) {
-				Deelname d1 = (Deelname) e.nextElement();
-				Vector tabelRij = new Vector();
-				tabelRij.addElement(d1.getSpeler().geefNaam());
-				tabelRij.addElement("" + d1.getSpeler().geefFiches());
-				System.out.println(d1.getSpeler().geefFiches());
+			Vector<Deelname> deelnemers = huidigeRonde.geefDeelnames();
+			for(Deelname d1 : deelnemers) {
+				Vector<String> tabelRij = new Vector<>();
+				SpelerDTO speler = PlayersService.getInstance().geefSpelerDetails(d1.getSpeler());
+				tabelRij.addElement(speler.geefNaam());
+				tabelRij.addElement("" + speler.geefFiches());
+				System.out.println(speler.geefFiches());
 				spelersTableData.addElement(tabelRij); 
 			}
 		}
@@ -259,7 +260,8 @@ public class TheMainPanel extends javax.swing.JPanel {
 		deTafelPanel.setVisible(true);
 		mijnHandPanel.setVisible(true);
 		eersteRonde = false;
-		if(!(hetSpel.getHuidigeSpelRonde().getActiveDeelname().getSpeler() instanceof ComputerSpeler)) {
+		SpelerDTO speler = PlayersService.getInstance().geefSpelerDetails(hetSpel.getHuidigeSpelRonde().getActiveDeelname().getSpeler());
+		if(speler.isHumanSpeler()) {
 			int sure = JOptionPane.showConfirmDialog(this, "Wilt u alle kaarten wisselen met die van de tafel?", "?", JOptionPane.OK_CANCEL_OPTION);
 			if(sure == 0) {
 				hetSpel.ruil3Kaart();
@@ -298,8 +300,9 @@ public class TheMainPanel extends javax.swing.JPanel {
 		mijnHandPanel.repaint();
 		deTafelPanel.setVisible(true);
 		mijnHandPanel.setVisible(true);
-		if(!(hetSpel.getHuidigeSpelRonde().getActiveDeelname().getSpeler() instanceof ComputerSpeler)) {
-			JOptionPane.showMessageDialog(this, "Het is de beurt van " + hetSpel.getHuidigeSpelRonde().getActiveDeelname().getSpeler().geefNaam() + ".", "Volgende speler", JOptionPane.WARNING_MESSAGE );
+		SpelerDTO speler = PlayersService.getInstance().geefSpelerDetails(hetSpel.getHuidigeSpelRonde().getActiveDeelname().getSpeler());
+		if(speler.isHumanSpeler()) {
+			JOptionPane.showMessageDialog(this, "Het is de beurt van " + speler.geefNaam() + ".", "Volgende speler", JOptionPane.WARNING_MESSAGE );
 		}
 	}
 	

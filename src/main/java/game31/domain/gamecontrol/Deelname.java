@@ -1,35 +1,47 @@
-package main.java.game31.domein;
+package main.java.game31.domain.gamecontrol;
 
 import java.util.*;
 
+import main.java.game31.domain.carddeck.Kaart;
+import main.java.game31.domain.players.PlayersService;
+import main.java.game31.domain.players.Speler;
+
 public class Deelname
 {
-	private Speler speler;
-	private Vector kaarten;
+	private int spelerId;
+	private Vector<Kaart> kaarten;
 	private int eindScore;	
 	private int place;
 	private Kaart selectedKaart;
 
-	public Deelname(Speler speler)
+	public Deelname(int speler)
 	{
-		this.speler = speler;
-		this.speler.setDeelname(this);
+		this.spelerId = speler;
+		Speler.geefSpeler(spelerId).setDeelname(this);
 	}
 
-	public void setKaarten(Vector kaarten)
+	public void setKaarten(Vector<Kaart> kaarten)
 	{
 		this.kaarten = kaarten;
 	}
 
+	public void eersteKeerInRonde() {
+		Speler.geefSpeler(spelerId).eersteKeerInRonde();
+	}
+	
+	public void aanDeBeurt() {
+		Speler.geefSpeler(spelerId).aanDeBeurt();
+	}
+	
 	public int geefEindScore()
 	{
-		eindScore = speler.geefFiches();
+		eindScore = PlayersService.getInstance().geefSpelerDetails(spelerId).geefFiches();
 		return eindScore;
 	}
 
 	public void replaceFor(Kaart k1, Kaart k2)
 	{
-		for (Iterator i = kaarten.iterator(); i.hasNext();) {
+		for (Iterator<Kaart> i = kaarten.iterator(); i.hasNext();) {
 			Kaart k = (Kaart) i.next();
 			if (k.equals(k1)) {
 				place = kaarten.indexOf(k);
@@ -40,22 +52,22 @@ public class Deelname
 		}
 	}
 
-	public Vector getKaarten() {	
+	public Vector<Kaart> getKaarten() {	
 		if (kaarten == null) {
-			return new Vector();
+			return new Vector<Kaart>();
 		} else {
 			return kaarten;
 		}
 	}
 
-	public Speler getSpeler()
+	public int getSpeler()
 	{
-		return speler;
+		return spelerId;
 	}
 
 	public void dumpFiche()
 	{
-		speler.dumpFiche();
+		Speler.geefSpeler(spelerId).dumpFiche();
 	}
 
 	public Kaart getSelected()
@@ -71,7 +83,7 @@ public class Deelname
 		catch (NullPointerException e) { System.out.println("vector nog niet gevuld!"); }
 	}
 
-	public void replaceAll(Vector kaarten)
+	public void replaceAll(Vector<Kaart> kaarten)
 	{
 		this.kaarten = kaarten;
 	}

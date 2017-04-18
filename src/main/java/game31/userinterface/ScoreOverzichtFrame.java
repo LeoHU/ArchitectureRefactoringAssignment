@@ -1,31 +1,17 @@
 package main.java.game31.userinterface;
 
+import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
 import java.awt.BorderLayout;
 
-
-
-
-
-
-/**
-* This code was generated using CloudGarden's Jigloo
-* SWT/Swing GUI Builder, which is free for non-commercial
-* use. If Jigloo is being used commercially (ie, by a
-* for-profit company or business) then you should purchase
-* a license - please visit www.cloudgarden.com for details.
-*/
-import javax.swing.JTextArea;
-
-import main.java.game31.domein.Deelname;
-import main.java.game31.domein.SpelRonde;
-import main.java.game31.domein.Speler;
+import main.java.game31.domain.gamecontrol.Deelname;
+import main.java.game31.domain.gamecontrol.SpelRonde;
+import main.java.game31.domain.players.PlayersService;
+import main.java.game31.domain.players.SpelerDTO;
 
 import java.util.*;
-
-
 
 /**
 * This code was generated using CloudGarden's Jigloo
@@ -87,8 +73,8 @@ public class ScoreOverzichtFrame extends javax.swing.JFrame {
 			for(Iterator j=deelnames.listIterator();j.hasNext();)
 			{
 				Deelname d = (Deelname) j.next();
-				Speler s = d.getSpeler();
-				jTextArea1.append(s.geefNaam() + " " + d.geefEindScore() + " ; ");
+				SpelerDTO speler = PlayersService.getInstance().geefSpelerDetails(d.getSpeler());
+				jTextArea1.append(speler.geefNaam() + " " + d.geefEindScore() + " ; ");
 			}
 			jTextArea1.append("\n");
 		}

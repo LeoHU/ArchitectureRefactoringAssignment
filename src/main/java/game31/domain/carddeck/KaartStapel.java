@@ -1,13 +1,12 @@
-package main.java.game31.domein;
+package main.java.game31.domain.carddeck;
 
 import java.util.*;
 
 public class KaartStapel
 {
-   private KaartSpel kaartSpel;
-   private Vector kaarten;
-   private Vector oorspronkelijkeKaarten = new Vector();
-   private Vector geschuddeKaarten = new Vector();
+   private Vector<Kaart> kaarten;
+   private Vector<Kaart> oorspronkelijkeKaarten = new Vector<>();
+   private Vector<Kaart> geschuddeKaarten = new Vector<>();
    private String spelType;
    private int card;
 
@@ -16,24 +15,24 @@ public class KaartStapel
       this.spelType = spelType;
       KaartSpel kaartSpel = new KaartSpel(this);
       kaarten = kaartSpel.geefKaarten();
-      for(Enumeration e=kaarten.elements(); e.hasMoreElements();){
+      for(Enumeration<Kaart> e=kaarten.elements(); e.hasMoreElements();){
       	oorspronkelijkeKaarten.addElement((Kaart) e.nextElement());
       }
    }
 
-   public Vector geefKaartenGeschud(int aantalDeelnemers)
+   public Vector<Kaart> geefKaartenGeschud(int aantalDeelnemers)
    {
       int number = kaarten.size();
       geschuddeKaarten.removeAllElements();
       for (int i = 0; i < kaarten.size(); i++) {
         card = (int) (Math.random() * number);
-        geschuddeKaarten.add(kaarten.elementAt(card));
+        geschuddeKaarten.add((Kaart) kaarten.elementAt(card));
         kaarten.removeElementAt(card);
         number--;
       }
       geschuddeKaarten.setSize(aantalDeelnemers * 3);
       kaarten.removeAllElements();
-	  for(Enumeration e=oorspronkelijkeKaarten.elements(); e.hasMoreElements();){
+	  for(Enumeration<Kaart> e=oorspronkelijkeKaarten.elements(); e.hasMoreElements();){
 	    kaarten.addElement((Kaart) e.nextElement());
 	  }
       return geschuddeKaarten;
@@ -43,7 +42,7 @@ public class KaartStapel
       return spelType;
    }
 
-   public Vector getKaarten() {
+   public Vector<Kaart> getKaarten() {
 	   return kaarten;
    }
 }

@@ -1,4 +1,4 @@
-package main.java.game31.domein;
+package main.java.game31.domain.players;
 
 public class Pot {
 	public int fiches;

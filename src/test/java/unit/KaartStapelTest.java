@@ -1,7 +1,7 @@
 package test.java.unit;
 
 import static org.junit.Assert.assertSame;
-import main.java.game31.domein.KaartStapel;
+import main.java.game31.domain.carddeck.KaartStapel;
 
 import org.junit.Before;
 import org.junit.Test;

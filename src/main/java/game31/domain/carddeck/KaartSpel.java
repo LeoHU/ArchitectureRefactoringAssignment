@@ -1,16 +1,14 @@
-package main.java.game31.domein;
+package main.java.game31.domain.carddeck;
 
 import java.util.*;
 
 public class KaartSpel
 {
 	private Vector<Kaart> kaarten = new Vector<Kaart>();
-	private KaartStapel ks;
 	private Kaart k;
 
 	public KaartSpel(KaartStapel ks)
 	{
-		this.ks = ks;
 		String s = ks.geefSpelType();
 		if(s.equals("Eenendertigen")) {
 			for(int i=7; i<15; i++) {

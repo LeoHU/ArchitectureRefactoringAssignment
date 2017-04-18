@@ -1,6 +1,9 @@
-package main.java.game31.domein;
+package test.java.unit;
 
 import java.util.*;
+
+import main.java.game31.domain.carddeck.Kaart;
+import main.java.game31.domain.carddeck.KaartStapel;
 
 public class Test1 {
 	

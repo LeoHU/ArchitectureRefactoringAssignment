@@ -1,20 +1,25 @@
-package main.java.game31.domein;
+package main.java.game31.domain.players;
 
 import java.util.*;
+
+import main.java.game31.domain.carddeck.Kaart;
+import main.java.game31.domain.carddeck.KaartStapel;
+import main.java.game31.domain.gamecontrol.Spel;
+import main.java.game31.domain.gamecontrol.Tafel;
 
 public class ComputerSpeler extends Speler{
 
 	private double[][][] kaartenTabel;
 	private Kaart[] kaartenIndex;
 
-	private Vector alleKaarten;
+	private Vector<Kaart> alleKaarten;
 
 	private Spel spel;
 	private int schuifCounter = 0;
 
-	public ComputerSpeler(String naam, int fices, Tafel tafel, Pot pot, KaartStapel kaartStapel, Spel spel)
+	public ComputerSpeler(String naam, int fices, Tafel tafel, KaartStapel kaartStapel, Spel spel)
 	{
-		super(naam,fices, tafel, pot);
+		super(naam,fices, tafel, false);
 		this.alleKaarten = kaartStapel.getKaarten();
 		this.spel = spel;
 		vulKaartenTabel();
@@ -25,11 +30,11 @@ public class ComputerSpeler extends Speler{
 	{
 		kaartenIndex = new Kaart[32];
 
-		Vector kaarten = alleKaarten;
+		Vector<Kaart> kaarten = alleKaarten;
 
 		//kaarten ophalen en in een array plaatsen
 		int index = 0;
-		for(Iterator itr = kaarten.iterator();itr.hasNext();index++)
+		for(Iterator<Kaart> itr = kaarten.iterator();itr.hasNext();index++)
 		{
 			Kaart k = (Kaart) itr.next();
 			kaartenIndex[index] = k;
@@ -86,8 +91,8 @@ public class ComputerSpeler extends Speler{
 	//de computerspeler krijgt de beurt
 	public void aanDeBeurt()
 	{
-		Vector opTafel = tafel.getKaarten();
-		Vector inHand  = deelname.getKaarten();
+		Vector<Kaart> opTafel = tafel.getKaarten();
+		Vector<Kaart> inHand  = deelname.getKaarten();
 
 		double puntenOpTafel = zoekPunten(opTafel);
 		double puntenInHand = zoekPunten(inHand);
@@ -132,7 +137,7 @@ public class ComputerSpeler extends Speler{
 				spel.doorSchuiven();
 			}
 		}
-		Vector handkaartjes = deelname.getKaarten();
+		Vector<Kaart> handkaartjes = deelname.getKaarten();
 		for(int i=0;i<3;i++)
 		{
 			Kaart k = (Kaart)handkaartjes.elementAt(i);
@@ -146,11 +151,11 @@ public class ComputerSpeler extends Speler{
 	{
 		schuifCounter = 0;
 		
-		Vector inHand  = deelname.getKaarten();
+		Vector<Kaart> inHand  = deelname.getKaarten();
 		double puntenInHand = zoekPunten(inHand);
 
 		//kan er 30.5 worden gescoord met deze kaarten?
-		Vector kaarten = deelname.getKaarten();
+		Vector<Kaart> kaarten = deelname.getKaarten();
 		Kaart krt1 = (Kaart) kaarten.elementAt(0);
 		Kaart krt2 = (Kaart) kaarten.elementAt(1);
 		Kaart krt3 = (Kaart) kaarten.elementAt(2);
@@ -227,7 +232,6 @@ public class ComputerSpeler extends Speler{
 
 	private int zoekIndex(Kaart k)
 	{
-		int index = 0;
 		for(int i=0;i<32;i++)
 		{
 			if(kaartenIndex[i] == k)
@@ -238,7 +242,7 @@ public class ComputerSpeler extends Speler{
 		return -1;
 	}
 
-	private double zoekPunten(Vector kaarten)
+	private double zoekPunten(Vector<Kaart> kaarten)
 	{
 		double aantalPunten = 0;
 

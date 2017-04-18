@@ -75,12 +75,12 @@
                 <name>Players UI</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>main.java.game31.userinterface.setupSpeler</name>
+                    <name>main.java.game31.userinterface.setupSpelers</name>
                     <type>CLASS</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>main.java.game31.userinterface.setupSpeler</path>
+                  <path>main.java.game31.userinterface.setupSpelers</path>
                 </PhysicalPaths>
               </ModuleStrategy>
             </SubModules>
@@ -108,22 +108,12 @@
                 <name>CardDeck</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.Kaart</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.KaartSpel</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.KaartStapel</name>
-                    <type>CLASS</type>
+                    <name>main.java.game31.domain.carddeck</name>
+                    <type>PACKAGE</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>main.java.game31.domein.Kaart</path>
-                  <path>main.java.game31.domein.KaartSpel</path>
-                  <path>main.java.game31.domein.KaartStapel</path>
+                  <path>main.java.game31.domain.carddeck</path>
                 </PhysicalPaths>
               </ModuleStrategy>
               <ModuleStrategy>
@@ -133,63 +123,50 @@
                 <name>GameControl</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.Spel</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.SpelRonde</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.Deelname</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.Hand</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.Tafel</name>
-                    <type>CLASS</type>
+                    <name>main.java.game31.domain.gamecontrol</name>
+                    <type>PACKAGE</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>main.java.game31.domein.Spel</path>
-                  <path>main.java.game31.domein.SpelRonde</path>
-                  <path>main.java.game31.domein.Deelname</path>
-                  <path>main.java.game31.domein.Hand</path>
-                  <path>main.java.game31.domein.Tafel</path>
+                  <path>main.java.game31.domain.gamecontrol</path>
                 </PhysicalPaths>
               </ModuleStrategy>
               <ModuleStrategy>
-                <type>SubSystem</type>
+                <type>Component</type>
                 <description />
                 <id>41</id>
                 <name>Players</name>
                 <SoftwareUnitDefinitions>
                   <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.ComputerSpeler</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.HumanSpeler</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.Pot</name>
-                    <type>CLASS</type>
-                  </SoftwareUnitDefinition>
-                  <SoftwareUnitDefinition>
-                    <name>main.java.game31.domein.Speler</name>
-                    <type>CLASS</type>
+                    <name>main.java.game31.domain.players</name>
+                    <type>PACKAGE</type>
                   </SoftwareUnitDefinition>
                 </SoftwareUnitDefinitions>
                 <PhysicalPaths>
-                  <path>main.java.game31.domein.ComputerSpeler</path>
-                  <path>main.java.game31.domein.HumanSpeler</path>
-                  <path>main.java.game31.domein.Pot</path>
-                  <path>main.java.game31.domein.Speler</path>
+                  <path>main.java.game31.domain.players</path>
                 </PhysicalPaths>
+                <SubModules>
+                  <ModuleStrategy>
+                    <type>Facade</type>
+                    <description>This is the Facade of Players</description>
+                    <id>47</id>
+                    <name>PlayersFacade</name>
+                    <SoftwareUnitDefinitions>
+                      <SoftwareUnitDefinition>
+                        <name>main.java.game31.domain.players.PlayersService</name>
+                        <type>CLASS</type>
+                      </SoftwareUnitDefinition>
+                      <SoftwareUnitDefinition>
+                        <name>main.java.game31.domain.players.SpelerDTO</name>
+                        <type>CLASS</type>
+                      </SoftwareUnitDefinition>
+                    </SoftwareUnitDefinitions>
+                    <PhysicalPaths>
+                      <path>main.java.game31.domain.players.PlayersService</path>
+                      <path>main.java.game31.domain.players.SpelerDTO</path>
+                    </PhysicalPaths>
+                  </ModuleStrategy>
+                </SubModules>
               </ModuleStrategy>
             </SubModules>
           </ModuleStrategy>
@@ -315,17 +292,6 @@ IsNotAllowedToMakeSkipCallDescription</description>
             <isException>false</isException>
           </AppliedRule>
           <AppliedRule>
-            <id>88</id>
-            <type>IsNotAllowedToUse</type>
-            <moduleFrom>41</moduleFrom>
-            <moduleTo>37</moduleTo>
-            <enabled>true</enabled>
-            <description />
-            <regex />
-            <dependencies />
-            <isException>false</isException>
-          </AppliedRule>
-          <AppliedRule>
             <id>90</id>
             <type>IsTheOnlyModuleAllowedToUse</type>
             <moduleFrom>32</moduleFrom>
@@ -355,6 +321,29 @@ IsNotAllowedToMakeSkipCallDescription</description>
             <isException>true</isException>
             <parentAppliedRuleId>76</parentAppliedRuleId>
           </AppliedRule>
+          <AppliedRule>
+            <id>93</id>
+            <type>FacadeConvention</type>
+            <moduleFrom>41</moduleFrom>
+            <moduleTo>41</moduleTo>
+            <enabled>true</enabled>
+            <description>This is a default rule for this type of module.
+FacadeConventionDescription</description>
+            <regex />
+            <dependencies />
+            <isException>false</isException>
+          </AppliedRule>
+          <AppliedRule>
+            <id>95</id>
+            <type>IsNotAllowedToUse</type>
+            <moduleFrom>41</moduleFrom>
+            <moduleTo>37</moduleTo>
+            <enabled>true</enabled>
+            <description />
+            <regex />
+            <dependencies />
+            <isException>false</isException>
+          </AppliedRule>
         </rules>
       </Architecture>
     </Application>
@@ -367,17 +356,17 @@ IsNotAllowedToMakeSkipCallDescription</description>
       <severities>
         <severity>
           <severityKey>Low</severityKey>
-          <id>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</id>
+          <id>86e6563d-818f-42b9-9d54-02ff65f34afe</id>
           <color>-65536</color>
         </severity>
         <severity>
           <severityKey>Medium</severityKey>
-          <id>85af8a7e-6888-4541-8c57-ec4346cf67bb</id>
+          <id>988496ad-eec7-4e84-8f58-ad1d957bb183</id>
           <color>-65536</color>
         </severity>
         <severity>
           <severityKey>High</severityKey>
-          <id>72a6a454-59dc-4a3a-9691-f00a0f751739</id>
+          <id>35217335-f708-4458-b669-cc70ad03d015</id>
           <color>-65536</color>
         </severity>
       </severities>
@@ -385,109 +374,109 @@ IsNotAllowedToMakeSkipCallDescription</description>
         <severityPerTypePerProgrammingLanguage language="C#">
           <severityPerType>
             <typeKey>Call</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>private</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>package</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Import</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Reference</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Inheritance</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Access</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Annotation</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>default</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>protected</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>public</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Declaration</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>class</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
         </severityPerTypePerProgrammingLanguage>
         <severityPerTypePerProgrammingLanguage language="Java">
           <severityPerType>
             <typeKey>Call</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>private</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>package</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Import</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Reference</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Inheritance</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Access</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Annotation</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>default</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>public</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>protected</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>Declaration</typeKey>
-            <severityId>85af8a7e-6888-4541-8c57-ec4346cf67bb</severityId>
+            <severityId>988496ad-eec7-4e84-8f58-ad1d957bb183</severityId>
           </severityPerType>
           <severityPerType>
             <typeKey>class</typeKey>
-            <severityId>fcbb6efa-fa77-4797-8c2d-25acfb13d82c</severityId>
+            <severityId>86e6563d-818f-42b9-9d54-02ff65f34afe</severityId>
           </severityPerType>
         </severityPerTypePerProgrammingLanguage>
       </severitiesPerTypesPerProgrammingLanguages>

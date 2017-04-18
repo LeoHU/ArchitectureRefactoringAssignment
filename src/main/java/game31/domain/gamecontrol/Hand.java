@@ -1,10 +1,9 @@
-package main.java.game31.domein;
+package main.java.game31.domain.gamecontrol;
 
-import java.util.Vector;
+import main.java.game31.domain.carddeck.Kaart;
 
 public class Hand 
 {
-	private Vector kaarten;
 	public Kaart theKaart;
 	
 	public Hand() 

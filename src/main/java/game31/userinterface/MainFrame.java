@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 
-import main.java.game31.domein.Spel;
+import main.java.game31.domain.gamecontrol.Spel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
