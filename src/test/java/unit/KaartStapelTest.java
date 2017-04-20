@@ -26,7 +26,7 @@ public class KaartStapelTest {
 	
 	@Test 
 	public void testAantalGeschuddeKaarten(){
-		int aantalKaarten = kaartStapel.getKaarten().size();
-		assertSame(aantalKaarten, 32);
+		int aantalKaarten = kaartStapel.geefKaartenGeschud(2).size();
+		assertSame(aantalKaarten, 6);
 	}
 }
