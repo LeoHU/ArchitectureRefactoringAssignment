@@ -17,7 +17,13 @@ public class ComputerSpeler extends Speler{
 	private Spel spel;
 	private int schuifCounter = 0;
 
-	public ComputerSpeler(String naam, int fices, Tafel tafel, KaartStapel kaartStapel, Spel spel)
+	protected static int createComputerSpeler(String naam, int fiches, Tafel tafel, KaartStapel ks, Spel spel) {
+		ComputerSpeler computer = new ComputerSpeler(naam, fiches, tafel, ks, spel);
+		int spelerId = computer.getId();
+		return spelerId;
+	}
+
+	private ComputerSpeler(String naam, int fices, Tafel tafel, KaartStapel kaartStapel, Spel spel)
 	{
 		super(naam,fices, tafel, false);
 		this.alleKaarten = kaartStapel.getKaarten();

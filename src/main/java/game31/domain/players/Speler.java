@@ -16,7 +16,7 @@ public abstract class Speler {
 	protected Pot pot;
 	protected Tafel tafel;
 	
-	public static int geefNieuweSpelerId() {
+	private static int geefNieuweSpelerId() {
 		int newId = 1;
 		if (!spelersMap.isEmpty()) {		
 			newId = newId + spelersMap.lastKey();
@@ -28,7 +28,7 @@ public abstract class Speler {
 		return spelersMap.get(id);
 	}
 	
-	public Speler(String naam, int fiches, Tafel tafel, boolean isHuman)
+	protected Speler(String naam, int fiches, Tafel tafel, boolean isHuman)
 	{
 		this.id = geefNieuweSpelerId();
 		this.naam = naam;
@@ -39,11 +39,11 @@ public abstract class Speler {
 		spelersMap.put(id, this);
 	}
 
-	public int getId() {
+	protected int getId() {
 		return id;
 	}
 	
-	public String geefNaam()
+	protected String geefNaam()
 	{
 		return naam;
 	}
@@ -54,12 +54,12 @@ public abstract class Speler {
 		this.fiches--;
 	}
 
-	public int geefFiches()
+	protected int geefFiches()
 	{
 		return fiches;
 	}
 
-	public SpelerDTO geefDetails() {
+	protected SpelerDTO geefDetails() {
 		return new SpelerDTO(id, naam, fiches, isHuman);
 	}
 	
