@@ -31,4 +31,9 @@ public class SpelerDTO {
 		return isHuman;
 	}
 
+	@Override
+	public String toString() {
+		return "SpelerDTO [id=" + id + ", naam=" + naam + ", fiches=" + fiches
+				+ ", isHuman=" + isHuman + "]";
+	}
 }
