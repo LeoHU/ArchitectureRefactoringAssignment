@@ -2,10 +2,6 @@ package main.java.game31.domain.players;
 
 import java.util.Calendar;
 
-import main.java.game31.domain.carddeck.KaartStapel;
-import main.java.game31.domain.gamecontrol.Spel;
-import main.java.game31.domain.gamecontrol.Tafel;
-
 public class PlayersService {
 	
 	private static PlayersService instance;
@@ -28,8 +24,8 @@ public class PlayersService {
 	 * @param tafel
 	 * @return int
 	 */
-	public int createHumanSpeler(String naam, Calendar geboorteDatum, int fiches, Tafel tafel) {
-		return HumanSpeler.createHumanSpeler(naam, geboorteDatum, fiches, tafel);
+	public int createHumanSpeler(String naam, Calendar geboorteDatum, int fiches) {
+		return HumanSpeler.createHumanSpeler(naam, geboorteDatum, fiches);
 	}
 
 	/**
@@ -41,8 +37,8 @@ public class PlayersService {
 	 * @param spel
 	 * @return int
 	 */
-	public int createComputerSpeler(String naam, int fiches, Tafel tafel, KaartStapel ks, Spel spel) {
-		return ComputerSpeler.createComputerSpeler(naam, fiches, tafel, ks, spel);
+	public int createComputerSpeler(String naam, int fiches) {
+		return ComputerSpeler.createComputerSpeler(naam, fiches);
 	}
 	
 	/**

@@ -28,14 +28,14 @@ public class Spel
 			for (Iterator<?> i = humanSpelerData.iterator(); i.hasNext();) {
 				Vector<?> data = (Vector<?>) i.next();
 				for (Iterator<?> j = data.iterator(); j.hasNext();) {
-					spelerIds.add(PlayersService.getInstance().createHumanSpeler((String) j.next(), (Calendar) j.next(), fiches, tafel));
+					spelerIds.add(PlayersService.getInstance().createHumanSpeler((String) j.next(), (Calendar) j.next(), fiches));
 				}
 			}
 		}
 
 		if (!compSpeler.isEmpty()) {
 			for (Iterator<?> i = compSpeler.iterator(); i.hasNext();) {
-				spelerIds.add(PlayersService.getInstance().createComputerSpeler((String) i.next(), fiches, tafel, ks, this));
+				spelerIds.add(PlayersService.getInstance().createComputerSpeler((String) i.next(), fiches));
 			}
 		}
 

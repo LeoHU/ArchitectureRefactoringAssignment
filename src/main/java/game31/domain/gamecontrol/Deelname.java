@@ -3,8 +3,10 @@ package main.java.game31.domain.gamecontrol;
 import java.util.*;
 
 import main.java.game31.domain.carddeck.Kaart;
+import main.java.game31.domain.carddeck.KaartStapel;
 import main.java.game31.domain.players.PlayersService;
 import main.java.game31.domain.players.Speler;
+import main.java.game31.domain.players.SpelerDTO;
 
 public class Deelname
 {
@@ -13,11 +15,15 @@ public class Deelname
 	private int eindScore;	
 	private int place;
 	private Kaart selectedKaart;
+	private ComputerDeelname computerDeelname;
 
-	public Deelname(int speler)
+	public Deelname(int spelerId, Tafel tafel, KaartStapel kaartStapel, Spel spel)
 	{
-		this.spelerId = speler;
-		Speler.geefSpeler(spelerId).setDeelname(this);
+		this.spelerId = spelerId;
+		Speler speler = Speler.geefSpeler(spelerId);
+		if (!speler.isHuman() == true) {
+			computerDeelname = new ComputerDeelname(this, tafel, kaartStapel, spel);
+		}
 	}
 
 	public void setKaarten(Vector<Kaart> kaarten)
@@ -26,11 +32,17 @@ public class Deelname
 	}
 
 	public void eersteKeerInRonde() {
-		Speler.geefSpeler(spelerId).eersteKeerInRonde();
+		SpelerDTO speler = PlayersService.getInstance().geefSpelerDetails(spelerId);
+		if (!speler.isHumanSpeler() == true) {
+			computerDeelname.eersteKeerInRonde();
+		}
 	}
 	
 	public void aanDeBeurt() {
-		Speler.geefSpeler(spelerId).aanDeBeurt();
+		SpelerDTO speler = PlayersService.getInstance().geefSpelerDetails(spelerId);
+		if (!speler.isHumanSpeler() == true) {
+			computerDeelname.aanDeBeurt();
+		}
 	}
 	
 	public int geefEindScore()

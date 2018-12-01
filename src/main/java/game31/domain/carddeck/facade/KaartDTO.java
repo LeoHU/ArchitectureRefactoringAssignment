@@ -1,4 +1,4 @@
-package main.java.game31.domain.carddeck.gateway;
+package main.java.game31.domain.carddeck.facade;
 
 public class KaartDTO {
 	protected String symbool = "";

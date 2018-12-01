@@ -46,4 +46,11 @@ public class Kaart
 	{
 		return gifAdr;
 	}
+
+	@Override
+	public String toString() {
+		return "Kaart [symbool=" + symbool + ", gifAdr=" + gifAdr + ", getal="
+				+ getal + ", waarde=" + waarde + "]";
+	}
+
 }

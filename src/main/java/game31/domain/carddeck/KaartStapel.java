@@ -42,7 +42,7 @@ public class KaartStapel
       return spelType;
    }
 
-   public Vector<Kaart> getKaarten() {
+   public Vector<Kaart> getAlleKaarten() {
 	   return kaarten;
    }
 }

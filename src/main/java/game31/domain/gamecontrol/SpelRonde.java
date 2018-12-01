@@ -21,7 +21,7 @@ public class SpelRonde
 		totaalKaarten = ks.geefKaartenGeschud(1+ deelnemendeSpelerIds.size());
 		int counter = 0;
 		for (int spelerId : deelnemendeSpelerIds) {
-			activeDeelname = new Deelname(spelerId);
+			activeDeelname = new Deelname(spelerId, tafel, ks, spel);
 			Vector<Kaart> persoonKaarten = new Vector<>();
 			persoonKaarten.add(totaalKaarten.elementAt(counter++));
 			persoonKaarten.add(totaalKaarten.elementAt(counter++));
