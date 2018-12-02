@@ -13,16 +13,16 @@ public class KaartDTO {
 		this.waarde = waarde;
 	}
 
-	public String getSymbool() {
+	public String geefSymbool() {
 		return symbool;
 	}
-	public String getGifAdr() {
+	public String geefGifAdr() {
 		return gifAdr;
 	}
-	public String getGetal() {
+	public String geefGetal() {
 		return getal;
 	}
-	public int getWaarde() {
+	public int geefWaarde() {
 		return waarde;
 	}
 
@@ -30,5 +30,13 @@ public class KaartDTO {
 	public String toString() {
 		return "KaartDTO [symbool=" + symbool + ", gifAdr=" + gifAdr
 				+ ", getal=" + getal + ", waarde=" + waarde + "]";
+	}
+	
+	public boolean equals(KaartDTO k) {
+		boolean isEqual = false;
+		if (k.geefSymbool().equals(geefSymbool()) || k.geefGetal().equals(geefGetal())) {
+			isEqual = true;
+		} 
+		return isEqual;
 	}
 }

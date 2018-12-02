@@ -2,7 +2,7 @@ package main.java.game31.domain.players;
 
 public class ComputerSpeler extends Speler{
 
-	protected static int createComputerSpeler(String naam, int fiches) {
+	public static int createComputerSpeler(String naam, int fiches) {
 		ComputerSpeler computer = new ComputerSpeler(naam, fiches);
 		int spelerId = computer.getId();
 		return spelerId;

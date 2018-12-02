@@ -2,27 +2,28 @@ package main.java.game31.domain.gamecontrol;
 
 import java.util.*;
 
-import main.java.game31.domain.carddeck.Kaart;
-import main.java.game31.domain.carddeck.KaartStapel;
+import main.java.game31.domain.carddeck.facade.CardDeckServices;
+import main.java.game31.domain.carddeck.facade.KaartDTO;
 
 public class SpelRonde
 {
 	private static int laatsteNr = 0;
 	private int rondeNr;
 	private Vector<Deelname> deelnames = new Vector<>();
-	private Vector<Kaart> totaalKaarten = new Vector<>();
+	private Vector<KaartDTO> totaalKaarten = new Vector<>();
 	private int beurtenTeGaan = -1;
 	private Deelname activeDeelname;
 	private Spel spel;
-	public SpelRonde(Spel spel, KaartStapel ks, Tafel tafel, TreeSet<Integer> deelnemendeSpelerIds)
+	public SpelRonde(Spel spel, Tafel tafel, TreeSet<Integer> deelnemendeSpelerIds)
 	{
+		CardDeckServices cardDeckServices = CardDeckServices.getInstance();
 		rondeNr = laatsteNr++;
 		this.spel = spel;
-		totaalKaarten = ks.geefKaartenGeschud(1+ deelnemendeSpelerIds.size());
+		totaalKaarten = cardDeckServices.geefKaartenGeschud(1+ deelnemendeSpelerIds.size());
 		int counter = 0;
 		for (int spelerId : deelnemendeSpelerIds) {
-			activeDeelname = new Deelname(spelerId, tafel, ks, spel);
-			Vector<Kaart> persoonKaarten = new Vector<>();
+			activeDeelname = new Deelname(spelerId, tafel, spel);
+			Vector<KaartDTO> persoonKaarten = new Vector<>();
 			persoonKaarten.add(totaalKaarten.elementAt(counter++));
 			persoonKaarten.add(totaalKaarten.elementAt(counter++));
 			persoonKaarten.add(totaalKaarten.elementAt(counter++));
@@ -30,7 +31,7 @@ public class SpelRonde
 			activeDeelname.setKaarten(persoonKaarten);
 			deelnames.add(activeDeelname);
 		}
-		Vector<Kaart> tafelKaarten = new Vector<>();
+		Vector<KaartDTO> tafelKaarten = new Vector<>();
 		tafelKaarten.add(totaalKaarten.elementAt(counter++));
 		tafelKaarten.add(totaalKaarten.elementAt(counter++));
 		tafelKaarten.add(totaalKaarten.elementAt(counter++));

@@ -8,8 +8,8 @@ import java.awt.BorderLayout;
 
 import main.java.game31.domain.gamecontrol.Deelname;
 import main.java.game31.domain.gamecontrol.SpelRonde;
-import main.java.game31.domain.players.PlayersService;
-import main.java.game31.domain.players.SpelerDTO;
+import main.java.game31.domain.players.facade.PlayersService;
+import main.java.game31.domain.players.facade.SpelerDTO;
 
 import java.util.*;
 

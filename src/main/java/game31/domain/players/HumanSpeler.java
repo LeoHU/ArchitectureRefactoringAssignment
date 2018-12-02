@@ -6,7 +6,7 @@ public class HumanSpeler extends Speler
 {
 	private Calendar gebDatum;
 
-	protected static int createHumanSpeler(String naam, Calendar geboorteDatum, int fiches) {
+	public static int createHumanSpeler(String naam, Calendar geboorteDatum, int fiches) {
 		HumanSpeler human = new HumanSpeler(naam, geboorteDatum, fiches);
 		int spelerId = human.getId();
 		return spelerId;

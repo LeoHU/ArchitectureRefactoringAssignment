@@ -5,21 +5,24 @@ import java.util.*;
 
 import javax.swing.JOptionPane;
 
-import main.java.game31.domain.carddeck.Kaart;
-import main.java.game31.domain.carddeck.KaartStapel;
-import main.java.game31.domain.players.PlayersService;
+import main.java.game31.domain.carddeck.facade.CardDeckServices;
+import main.java.game31.domain.carddeck.facade.KaartDTO;
+import main.java.game31.domain.players.facade.PlayersService;
 import main.java.game31.userinterface.MainFrame;
 import main.java.game31.userinterface.ScoreOverzichtFrame;
 
 public class Spel
 {
+	private String spelNaam = "Eenendertigen";
 	private Frame mf;
-	private Vector<SpelRonde> 		spelRondes			= new Vector<SpelRonde>();
+	private Vector<SpelRonde> spelRondes = new Vector<SpelRonde>();
 	private int	gewonnenSpeler;
-	private TreeSet<Integer> spelerIds	= new TreeSet<Integer>();
-	private TreeSet<Integer> deelnemendeSpelerIds	= new TreeSet<Integer>();
-	private	KaartStapel	ks					= new KaartStapel("Eenendertigen");
-	private	Tafel 		tafel				= new Tafel();
+	private TreeSet<Integer> spelerIds = new TreeSet<Integer>();
+	private TreeSet<Integer> deelnemendeSpelerIds = new TreeSet<Integer>();
+	private	Tafel tafel = new Tafel();
+
+	public Spel() {
+	}
 
 	public Spel(Vector<?> compSpeler, Vector<?> humanSpelerData, int fiches, Frame mf)
 	{
@@ -32,20 +35,24 @@ public class Spel
 				}
 			}
 		}
-
 		if (!compSpeler.isEmpty()) {
 			for (Iterator<?> i = compSpeler.iterator(); i.hasNext();) {
 				spelerIds.add(PlayersService.getInstance().createComputerSpeler((String) i.next(), fiches));
 			}
 		}
-
 		deelnemendeSpelerIds = spelerIds;
-		SpelRonde sr = new SpelRonde(this, ks, tafel, spelerIds);
+
+		CardDeckServices.createCardDeckServices(this);
+		SpelRonde sr = new SpelRonde(this, tafel, spelerIds);
 		sr.setSpeler(spelerIds.first());
 		spelRondes.add(sr);
 	}
 
-	public void ruil1Kaart(Kaart k1, Kaart k2)
+	public String getNaam() {
+		return spelNaam;
+	}
+	
+	public void ruil1Kaart(KaartDTO k1, KaartDTO k2)
 	{
 		SpelRonde spelronde = (SpelRonde) spelRondes.lastElement();
 		spelronde.getActiveDeelname().replaceFor(k1, k2);
@@ -68,8 +75,8 @@ public class Spel
 	public void ruil3Kaart()
 	{
 		SpelRonde spelronde = (SpelRonde) spelRondes.lastElement();
-		Vector<Kaart> tafel1 = tafel.getKaarten();
-		Vector<Kaart> dn = spelronde.getActiveDeelname().getKaarten();
+		Vector<KaartDTO> tafel1 = tafel.getKaarten();
+		Vector<KaartDTO> dn = spelronde.getActiveDeelname().getKaarten();
 		spelronde.getActiveDeelname().replaceAll(tafel1);
 		tafel.replaceAll(dn);
 		if (controleerWaarde(getHuidigeSpelRonde().getActiveDeelname()) == 31) {
@@ -138,7 +145,7 @@ public class Spel
 			Deelname dn = (Deelname) i.next();
 			dn.geefEindScore();
 		}
-		spelRondes.add(new SpelRonde(this, ks, tafel, deelnemendeSpelerIds));
+		spelRondes.add(new SpelRonde(this, tafel, deelnemendeSpelerIds));
 		// winnende speler van afgelopen ronde wordt opgehaald
 		int waarde = 0;
 		int spelerId = 0;
@@ -173,11 +180,11 @@ public class Spel
 
 	public int controleerWaarde(Deelname dn)
 	{
-		Vector<?> v = dn.getKaarten();
-		Iterator<?> i = v.iterator();
-		Kaart k1 = (Kaart) i.next();
-		Kaart k2 = (Kaart) i.next();
-		Kaart k3 = (Kaart) i.next();
+		Vector<KaartDTO> v = dn.getKaarten();
+		Iterator<KaartDTO> i = v.iterator();
+		KaartDTO k1 = i.next();
+		KaartDTO k2 = i.next();
+		KaartDTO k3 = i.next();
 		int waarde = 0;
 		if ((k1.geefSymbool().equals(k2.geefSymbool())) && (k1.geefSymbool().equals(k3.geefSymbool()))) {
 			waarde = (k1.geefWaarde() + k2.geefWaarde() + k3.geefWaarde());

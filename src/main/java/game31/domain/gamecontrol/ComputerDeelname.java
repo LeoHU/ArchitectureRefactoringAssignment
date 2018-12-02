@@ -2,44 +2,44 @@ package main.java.game31.domain.gamecontrol;
 
 import java.util.*;
 
-import main.java.game31.domain.carddeck.Kaart;
-import main.java.game31.domain.carddeck.KaartStapel;
+import main.java.game31.domain.carddeck.facade.CardDeckServices;
+import main.java.game31.domain.carddeck.facade.KaartDTO;
 import main.java.game31.domain.gamecontrol.Spel;
 import main.java.game31.domain.gamecontrol.Tafel;
 
 public class ComputerDeelname{
 
 	private double[][][] kaartenTabel;
-	private Kaart[] kaartenIndex;
+	private KaartDTO[] kaartenIndex;
 
-	private Vector<Kaart> alleKaarten;
+	private Vector<KaartDTO> alleKaarten;
 
 	private Spel spel;
 	private Deelname deelname;
 	private Tafel tafel;
 	private int schuifCounter = 0;
 
-	public ComputerDeelname(Deelname deelname, Tafel tafel, KaartStapel kaartStapel, Spel spel)
+	public ComputerDeelname(Deelname deelname, Tafel tafel, Spel spel)
 	{
 		this.spel = spel;
 		this.deelname = deelname;
 		this.tafel = tafel;
-		this.alleKaarten = kaartStapel.getAlleKaarten();
+		this.alleKaarten = CardDeckServices.getInstance().getAlleKaarten();
 		vulKaartenTabel();
 		printTabel();
 	}
 
 	private void vulKaartenTabel()
 	{
-		kaartenIndex = new Kaart[32];
+		kaartenIndex = new KaartDTO[32];
 
-		Vector<Kaart> kaarten = alleKaarten;
+		Vector<KaartDTO> kaarten = alleKaarten;
 
 		//kaarten ophalen en in een array plaatsen
 		int index = 0;
-		for(Iterator<Kaart> itr = kaarten.iterator();itr.hasNext();index++)
+		for(Iterator<KaartDTO> itr = kaarten.iterator();itr.hasNext();index++)
 		{
-			Kaart k = (Kaart) itr.next();
+			KaartDTO k = itr.next();
 			kaartenIndex[index] = k;
 			//System.out.println(index + " " + k.geefSymbool() + " " + k.geefGetal());
 		}
@@ -94,8 +94,8 @@ public class ComputerDeelname{
 	//de computerspeler krijgt de beurt
 	public void aanDeBeurt()
 	{
-		Vector<Kaart> opTafel = tafel.getKaarten();
-		Vector<Kaart> inHand  = deelname.getKaarten();
+		Vector<KaartDTO> opTafel = tafel.getKaarten();
+		Vector<KaartDTO> inHand  = deelname.getKaarten();
 
 		double puntenOpTafel = zoekPunten(opTafel);
 		double puntenInHand = zoekPunten(inHand);
@@ -105,8 +105,8 @@ public class ComputerDeelname{
 
 		for(int i=0;i<3;i++)
 		{
-			indexHand[i] = zoekIndex((Kaart)inHand.elementAt(i));
-			indexTafel[i] = zoekIndex((Kaart)opTafel.elementAt(i));
+			indexHand[i] = zoekIndex(inHand.elementAt(i));
+			indexTafel[i] = zoekIndex(opTafel.elementAt(i));
 		}
 
 		double[][] puntenTabel = combineer(indexHand, indexTafel);
@@ -140,10 +140,10 @@ public class ComputerDeelname{
 				spel.doorSchuiven();
 			}
 		}
-		Vector<Kaart> handkaartjes = deelname.getKaarten();
+		Vector<KaartDTO> handkaartjes = deelname.getKaarten();
 		for(int i=0;i<3;i++)
 		{
-			Kaart k = (Kaart)handkaartjes.elementAt(i);
+			KaartDTO k = handkaartjes.elementAt(i);
 			System.out.println(k.geefSymbool() + " " + k.geefGetal());
 		}
 		
@@ -154,14 +154,14 @@ public class ComputerDeelname{
 	{
 		schuifCounter = 0;
 		
-		Vector<Kaart> inHand  = deelname.getKaarten();
+		Vector<KaartDTO> inHand  = deelname.getKaarten();
 		double puntenInHand = zoekPunten(inHand);
 
 		//kan er 30.5 worden gescoord met deze kaarten?
-		Vector<Kaart> kaarten = deelname.getKaarten();
-		Kaart krt1 = (Kaart) kaarten.elementAt(0);
-		Kaart krt2 = (Kaart) kaarten.elementAt(1);
-		Kaart krt3 = (Kaart) kaarten.elementAt(2);
+		Vector<KaartDTO> kaarten = deelname.getKaarten();
+		KaartDTO krt1 = kaarten.elementAt(0);
+		KaartDTO krt2 = kaarten.elementAt(1);
+		KaartDTO krt3 = kaarten.elementAt(2);
 
 		if(puntenInHand == 31.0)
 		{
@@ -233,11 +233,11 @@ public class ComputerDeelname{
 		return tabel;
 	}
 
-	private int zoekIndex(Kaart k)
+	private int zoekIndex(KaartDTO k)
 	{
 		for(int i=0;i<32;i++)
 		{
-			if(kaartenIndex[i] == k)
+			if(kaartenIndex[i].equals(k))
 			{
 				return i;
 			}
@@ -245,14 +245,14 @@ public class ComputerDeelname{
 		return -1;
 	}
 
-	private double zoekPunten(Vector<Kaart> kaarten)
+	private double zoekPunten(Vector<KaartDTO> kaarten)
 	{
 		double aantalPunten = 0;
 
 		int[] index = new int[3];
-		index[0] = zoekIndex((Kaart)kaarten.elementAt(0));
-		index[1] = zoekIndex((Kaart)kaarten.elementAt(1));
-		index[2] = zoekIndex((Kaart)kaarten.elementAt(2));
+		index[0] = zoekIndex(kaarten.elementAt(0));
+		index[1] = zoekIndex(kaarten.elementAt(1));
+		index[2] = zoekIndex(kaarten.elementAt(2));
 
 		aantalPunten = kaartenTabel[index[0]][index[1]][index[2]];
 

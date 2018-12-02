@@ -1,4 +1,4 @@
-package main.java.game31.domain.players;
+package main.java.game31.domain.players.facade;
 
 public class SpelerDTO {
 	protected int id = 0;

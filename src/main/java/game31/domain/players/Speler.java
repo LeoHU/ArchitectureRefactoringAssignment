@@ -2,6 +2,8 @@ package main.java.game31.domain.players;
 
 import java.util.TreeMap;
 
+import main.java.game31.domain.gamecontrol.Deelname;
+
 public abstract class Speler {
 	protected static TreeMap<Integer, Speler> spelersMap = new TreeMap<>();
 	protected static Pot gedeeldePot = new Pot();
@@ -9,6 +11,7 @@ public abstract class Speler {
 	protected String naam = "";
 	protected int fiches = 0;
 	protected boolean isHuman = true;
+	protected Deelname deelname;
 	protected Pot pot;
 	
 	private static int geefNieuweSpelerId() {
@@ -33,11 +36,11 @@ public abstract class Speler {
 		spelersMap.put(id, this);
 	}
 
-	protected int getId() {
+	public int getId() {
 		return id;
 	}
 	
-	protected String geefNaam()
+	public String geefNaam()
 	{
 		return naam;
 	}
@@ -52,12 +55,12 @@ public abstract class Speler {
 		this.fiches--;
 	}
 
-	protected int geefFiches()
+	public int geefFiches()
 	{
 		return fiches;
 	}
 
-	protected SpelerDTO geefDetails() {
-		return new SpelerDTO(id, naam, fiches, isHuman);
+	public void setDeelname(Deelname dn) {
+		this.deelname = dn;
 	}
 }

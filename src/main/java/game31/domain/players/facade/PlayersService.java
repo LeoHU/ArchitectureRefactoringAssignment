@@ -1,6 +1,10 @@
-package main.java.game31.domain.players;
+package main.java.game31.domain.players.facade;
 
 import java.util.Calendar;
+
+import main.java.game31.domain.players.ComputerSpeler;
+import main.java.game31.domain.players.HumanSpeler;
+import main.java.game31.domain.players.Speler;
 
 public class PlayersService {
 	
@@ -21,7 +25,6 @@ public class PlayersService {
 	 * @param naam
 	 * @param geboorteDatum
 	 * @param fiches
-	 * @param tafel
 	 * @return int
 	 */
 	public int createHumanSpeler(String naam, Calendar geboorteDatum, int fiches) {
@@ -32,9 +35,6 @@ public class PlayersService {
 	 * Creates a computerspeler and returns a spelerId
 	 * @param naam
 	 * @param fiches 
-	 * @param tafel
-	 * @param ks
-	 * @param spel
 	 * @return int
 	 */
 	public int createComputerSpeler(String naam, int fiches) {
@@ -62,7 +62,7 @@ public class PlayersService {
 		SpelerDTO spelerDTO;
 		Speler speler = Speler.geefSpeler(spelerId);
 		if (speler != null) {
-			spelerDTO = speler.geefDetails();
+			spelerDTO = new SpelerDTO(spelerId, speler.geefNaam(), speler.geefFiches(), speler.isHuman());
 		} else {
 			spelerDTO =  new SpelerDTO(spelerId, "", 0, true);
 		}
